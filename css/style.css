@@ -771,7 +771,7 @@ form label {
 }
 
 form input {
-    width: 150%;
+    width: 100%;
     padding: 26px 20px 26px;
     background-color: #38383A;
     border: none;
