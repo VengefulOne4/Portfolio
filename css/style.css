@@ -573,10 +573,12 @@ header {
 .tech-image {
     filter: grayscale(100%);
     transition: 0.2s ease;
+    padding: 30px;
 }
 
 .tech-item:hover .tech-image {
     filter: grayscale(0);
+    padding: 20px;
 }
 
 .ui-tooltip {
@@ -620,6 +622,9 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding-top: 33px;
+    padding-bottom: 61px;
+    height: 268px;
 }
 
 .tarif-title {
