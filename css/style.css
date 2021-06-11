@@ -282,10 +282,17 @@ header {
     z-index: 1;
 }
 
-.triangle {
+.triangle-main {
     position: absolute;
     left: -151px;
     top: -23px;
+    z-index: 2;
+}
+
+.triangle-form {
+    position: absolute;
+    left: -176px;
+    top: 141px;
     z-index: 2;
 }
 
@@ -314,11 +321,11 @@ header {
 }
 
 .circle-form {
-    width: 253px;
-    height: 253px;
+    width: 300px;
+    height: 300px;
     position: absolute;
-    left: -128px;
-    top: calc(50% - 138px);
+    left: -153px;
+    top: 90px;
     z-index: 1;
 }
 
@@ -722,8 +729,9 @@ header {
 }
 
 .section-form {
-    padding-top: 90;
+    padding-top: 90px;
     padding-bottom: 128px;
+    position: relative;
 }
 
 .form {
@@ -739,6 +747,11 @@ header {
     text-transform: uppercase;
     border-bottom: 1px solid #F3F2F0;
     line-height: 150%;
+}
+
+.form-title p {
+    position: relative;
+    z-index: 4;
 }
 
 .form-description {
