@@ -99,6 +99,19 @@ body {
 .photo {
     margin-bottom: 93px;
     width: 100%;
+    height: 310px;
+    position: relative;
+    overflow: hidden;
+}
+
+.photo img {
+    width: 100%;
+    height: 310px;
+    position: absolute;
+    left: -50%;
+    top: -50%;
+    transform: translate(50%, 50%);
+    object-fit: cover;
 }
 
 header {
@@ -225,6 +238,7 @@ header {
 
 .skill {
     display: flex;
+    flex-wrap: wrap;
     padding-top: 47px;
 }
 
@@ -261,6 +275,7 @@ header {
 
 .steps-title {
     font-size: 28px;
+    line-height: 150%;
 }
 
 .steps-title span {
@@ -335,7 +350,7 @@ header {
 
 .about {
     display: grid;
-    grid-template: 290px / repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .about-title {
@@ -402,8 +417,12 @@ header {
     z-index: 1;
 }
 
-.gradient {
+.dark .gradient {
     background: linear-gradient(180deg, #141416 0%, rgba(20, 20, 22, 0) 100%);
+}
+
+.light .gradient {
+    background: linear-gradient(180deg, #E7E6E6 0%, rgba(231, 230, 230, 0) 100%);
 }
 
 .section-portfolio {
@@ -457,6 +476,7 @@ header {
 
 .work {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #F3F2F0;
@@ -524,11 +544,18 @@ header {
     max-width: 870px;
 }
 
+.dark .advantages {
+    border-top: 1px solid #F3F2F0;
+}
+
+.light .advantages {
+    border-top: 1px solid #010101;
+}
+
 .advantages {
     display: grid;
     grid-template: 1fr 1fr / repeat(3, 1fr);
     grid-gap: 81px 22px;
-    border-top: 1px solid #F3F2F0;
     padding-top: 80px;
     margin-top: 78px;
 }
@@ -547,8 +574,12 @@ header {
     height: 40px;
 }
 
-.advantages-image path {
+.dark .advantages-image path {
     fill: #F3F2F0;
+}
+
+.light .advantages-image path {
+    fill: #010101;
 }
 
 .advantages .title-h3 {
@@ -570,20 +601,36 @@ header {
     text-align: center;
 }
 
-.tech-item {
+.dark .tech-item {
     border-bottom: 1px solid rgba(243, 242, 240, 0.3);
     border-right: 1px solid rgba(243, 242, 240, 0.3);
     display: flex;
     justify-content: center;
 }
 
-.tech-item:first-child,
-.tech-item:nth-child(5) {
+.dark .tech-item:first-child,
+.dark .tech-item:nth-child(5) {
     border-left: 1px solid rgba(243, 242, 240, 0.3);
 }
 
-.html, .css, .js, .jquery {
+.dark .html, .css, .js, .jquery {
     border-top: 1px solid rgba(243, 242, 240, 0.3);
+}
+
+.light .tech-item {
+    border-bottom: 1px solid #010101;
+    border-right: 1px solid #010101;
+    display: flex;
+    justify-content: center;
+}
+
+.light .tech-item:first-child,
+.light .tech-item:nth-child(5) {
+    border-left: 1px solid #010101;
+}
+
+.light .html, .css, .js, .jquery {
+    border-top: 1px solid #010101;
 }
 
 .tech-image {
@@ -594,7 +641,7 @@ header {
 
 .tech-item:hover .tech-image {
     filter: grayscale(0);
-    padding: 20px;
+    padding: 30px;
 }
 
 .ui-tooltip {
@@ -633,8 +680,15 @@ header {
     grid-template-columns: 1fr 1fr;
 }
 
-.tarif-item {
+.dark .tarif-item {
     border-bottom: 1px solid #F3F2F0;
+}
+
+.light .tarif-item {
+    border-bottom: 1px solid #010101;
+}
+
+.tarif-item {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -643,12 +697,19 @@ header {
     height: 268px;
 }
 
+.dark .tarif-title {
+    border-bottom: 1px solid #F3F2F0;
+}
+
+.light .tarif-title {
+    border-bottom: 1px solid #010101;
+}
+
 .tarif-title {
     font-size: 28px;
     font-weight: 700;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    border-bottom: 1px solid #F3F2F0;
 }
 
 .tarif-title > div {
@@ -660,11 +721,22 @@ header {
     z-index: 1;
 }
 
+.dark .tarif-description {
+    border-bottom: 1px solid #F3F2F0;
+}
+
+.light .tarif-description {
+    border-bottom: 1px solid #010101;
+}
+
 .tarif-description {
     font-size: 28px;
     line-height: 150%;
     opacity: 0.8;
-    border-bottom: 1px solid #F3F2F0;
+}
+
+.tarif-header {
+    padding-right: 15px;
 }
 
 .tarif-name {
@@ -740,12 +812,19 @@ header {
     padding-bottom: 60px;
 }
 
+.dark .form-title {
+    border-bottom: 1px solid #F3F2F0;
+}
+
+.light .form-title {
+    border-bottom: 1px solid #010101;
+}
+
 .form-title {
     font-size: 28px;
     font-weight: 700;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    border-bottom: 1px solid #F3F2F0;
     line-height: 150%;
 }
 
@@ -754,11 +833,18 @@ header {
     z-index: 4;
 }
 
+.dark .form-description {
+    border-bottom: 1px solid #F3F2F0;
+}
+
+.light .form-description {
+    border-bottom: 1px solid #010101;
+}
+
 .form-description {
     font-size: 28px;
     line-height: 150%;
     opacity: 0.8;
-    border-bottom: 1px solid #F3F2F0;
     padding-bottom: 30px;
 }
 
@@ -783,14 +869,22 @@ form label {
     display: block;
 }
 
+.dark form input {
+    background-color: #38383A;
+    color: #F3F2F0;
+}
+
+.light form input {
+    background-color: #e5e5e5;
+    color: #010101;
+}
+
 form input {
     width: 100%;
     padding: 26px 20px 26px;
-    background-color: #38383A;
     border: none;
     box-sizing: border-box;
     margin-bottom: 21px;
-    color: #F3F2F0;
 }
 
 form input:focus {
@@ -805,31 +899,53 @@ form input[type="submit"] {
     color: #F3F2F0;
     padding: 21px 0;
     margin-bottom: 0;
+    transition: 0.2s ease;
+}
+
+form input[type="submit"]:hover {
+    background: #EA0E00;
+    cursor: pointer;
 }
 
 form select {
     width: 100%;
 }
 
-.ui-selectmenu-button.ui-button {
-    width: 100%;
+.dark .ui-selectmenu-button.ui-button {
     background-color:#38383A;
     color: #fff;
+}
+
+.light .ui-selectmenu-button.ui-button {
+    background-color:#EEEDEB;
+    color: #010101;
+}
+
+.ui-selectmenu-button.ui-button {
+    width: 100%;
     padding: 25px 20px 25px;
     box-sizing: border-box;
     margin-bottom: 39px;
     border-radius: 0;
 }
 
-.ui-bitton:hover,
+.ui-button:hover,
 .ui-button:focus {
     border: none;
     outline: none;
 }
 
-.ui-selectmenu-menu .ui-menu {
+.dark .ui-selectmenu-menu .ui-menu {
     background-color: #38383A;
     color:rgba(243, 242, 240, 0.4);
+}
+
+.light .ui-selectmenu-menu .ui-menu {
+    background-color:#EEEDEB;
+    color: #010101;
+}
+
+.ui-selectmenu-menu .ui-menu {
     font-size: 12px;
 }
 
@@ -838,22 +954,37 @@ form select {
 }
 
 .ui-selectmenu-menu .ui-menu .ui-menu-item:hover {
-    color:rgba(243, 242, 240, 1);
     padding: 10px 20px;
 }
 
-footer {
+.dark .ui-selectmenu-menu .ui-menu .ui-menu-item:hover {
+    color:rgba(243, 242, 240, 1);
+    
+}
+
+.light .ui-selectmenu-menu .ui-menu .ui-menu-item:hover {
+    color:#010101;
+    
+}
+
+.dark footer {
     border-top: 1px solid #F3F2F0;
+}
+
+.light footer {
+    border-top: 1px solid #010101;
 }
 
 .footer-top {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     padding-top: 65px;
 }
 
 .footer-bottom {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     padding-top: 43px;
     padding-bottom: 41px;
@@ -861,12 +992,28 @@ footer {
 
 .footer-bottom p {
     margin: 0;
+    
+}
+
+.dark .footer-bottom p{
     color:rgba(243, 242, 240, 0.3);
 }
 
-.footer-link {
+.light .footer-bottom p {
+    color: #010101;
+}
+
+.dark .footer-link {
     color:rgba(243, 242, 240, 0.3);
     border-bottom: 1px solid rgba(243, 242, 240, 0.3);
+}
+
+.light .footer-link {
+    color: #AFAEAD;
+    border-bottom: 1px solid #AFAEAD;
+}
+
+.footer-link {
     transition: 0.2s ease;
     text-decoration: none;
 }
@@ -879,7 +1026,450 @@ footer {
     padding-left: 0;
 }
 
-.footer-link:hover {
+.dark .footer-link:hover {
     color:rgba(243, 242, 240, 1);
     border-bottom: 1px solid rgba(243, 242, 240, 1);
+}
+
+.light .footer-link:hover {
+    color:#010101;
+    border-bottom: 1px solid #010101;
+}
+
+@media(min-width: 901px) {
+    .header-mobile{
+        display: none;
+    }
+}
+
+@media(max-width: 900px) {
+    header{
+        display: none;
+    }
+    .header-mobile{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 30px;
+        padding-bottom: 40px;   
+    }
+
+    .menu {
+        background: transparent;
+        border: none;
+    }
+
+    .circle-main {
+        width: 200px;
+        height: 200px;
+        left: -99px;
+        top: calc(50% - 100px);
+    }
+
+    .triangle {
+        left: 0;
+        top: inherit;
+        bottom: -80px;
+        width: 48px;
+    }
+
+    .name {
+        font-size: 20px;
+    }
+
+    .main .title-h1 {
+        margin-top: 28px;
+    }
+
+    .title-h1 {
+        font-size: 50px;
+    }
+
+    .social {
+        margin-top: 145px;
+    }
+
+    .skill {
+        justify-content: space-between;
+    }
+
+
+    .skill-item {
+        flex: 0 0 47%;
+        margin-right: 3%;
+        padding-bottom: 20px;
+    }
+
+    .about {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-description {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+    }
+
+    .about-01 {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+
+    .about-02 {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+    }
+
+    .about-03 {
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+    }
+
+    .about-04 {
+        grid-column: 2 / 3;
+        grid-row: 4 / 5;
+    }
+
+    .steps-title {
+        font-size: 20px;
+        padding-right: 25px;
+    }
+
+    .nav-tabs {
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .nav-tabs-item {
+        margin-right: 0;
+    }
+
+    .ui-helper-clearfix:before, .ui-helper-clearfix:after {
+        display: none;
+    }
+
+    .circle-portfolio {
+        width: 465px;
+        height: 465px;
+        top: -341px;
+        left: inherit;
+        right: 29px;
+    }
+
+    .work {
+        padding-bottom: 0;
+    }
+
+    .work-item {
+        flex: 0 0 100%;
+        padding-bottom: 56px;
+    }
+
+    .advantages {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tarif-title {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+        border-bottom: none!important;
+    }
+
+    .tarif-description {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+    }
+
+    .circle-tarif {
+        width: 250px;
+        height: 250px;
+        left: -155px;
+        top: calc(50% - 125px);
+    }
+
+    .form {
+        grid-template-columns: 1fr;
+    }
+
+    .form-title {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    .form-description {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        position: relative;
+        z-index: 1;
+    }
+
+    .form-item {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+
+    .form-social {
+        grid-row: 4 / 5;
+        border-top: none !important;
+        align-items: center;
+    }
+
+    .circle-form {
+        left: -135px;
+        top: -34px;
+    }
+
+    .triangle-form {
+        bottom: inherit;
+        top: -54px;
+        left: 92px;
+        width: 35px;
+    }
+
+    .footer-top {
+        flex-direction: column-reverse;
+    }
+
+    .footer-top .nav, .footer-bottom > p {
+        flex-basis: 100%;
+    }
+
+    .footer-top .nav {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .footer-top .nav-info {
+        justify-content: center;
+        padding-bottom: 30px;
+    }
+
+    .footer-bottom > p {
+        text-align: center;
+        padding-bottom: 20px;
+    }
+}
+
+@media(max-width: 600px) {
+    .tech {
+        grid-template: 120px 120px / repeat (4, 1fr);
+    }
+
+    .tech-image, .jquery .tech-image {
+        width: 50px;
+    }
+
+    .advantages {
+        grid-template-columns: 1fr;
+    }
+
+    .steps-title {
+        padding-right: 0;
+        margin-bottom: 0;
+    }
+
+    .steps-description {
+        flex: 0 0 100%;
+        min-width: 100%;
+    }
+
+    .steps-title span {
+        margin-right: 20px;
+    }
+
+    .steps-item {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .tarif {
+        grid-template-columns: 1fr;
+    }
+
+    .tarif-item {
+        grid-column: 1 / 2;
+        height: inherit;
+    }
+
+    .tarif-left {
+        border-bottom: none !important;
+        padding-bottom: 0;
+    }
+
+    .circle-price {
+        top: 0;
+    }
+
+    .title-h1 {
+        font-size: 40px;
+    }
+
+    .name {
+        font-size: 18px;
+    }
+
+    .main .title-h1 {
+        margin-top: 18px;
+    }
+}
+
+@media(max-width: 550px) {
+
+    .photo, .photo img {
+        height: 215px;
+    }
+
+    .photo {
+        margin-bottom: 64px;
+    }
+
+    .main .title-h1 {
+        margin-top: 24px;
+    }
+    
+    .title-h1 {
+        font-size: 28px;
+        line-height: 34px;
+    }
+
+    .circle-main {
+        width: 135px;
+        height: 135px;
+        left: -69px;
+        top: calc(50% - 67px);
+    }
+
+    .triangle {
+        bottom: -72px;
+        width: 29px;
+        left: 8px;
+    }
+
+    .circle-nav {
+        width: 60px;
+        height: 60px;
+        right: 27px;
+        top: calc(50% - 30px);
+
+    }
+
+    .social {
+        margin-top: 100px;
+        padding-bottom: 30px;
+    }
+
+    .skill {
+        padding-top: 30px;
+    }
+
+    .skill .title-h3 {
+        margin-bottom: 18px;
+    }
+
+    .skill-item {
+        padding-bottom: 10px;
+    }
+
+    .section-about {
+        padding-top: 0;
+    }
+
+    .about-title {
+        border-bottom: none !important;
+        padding-bottom: 0;
+    }
+
+    .about-description {
+        padding: 20px 10px 64px 9px;
+    }
+
+    .about-01 {
+        padding: 30px 20px 35px 9px;
+    }
+
+    .about-02 {
+        padding: 32px 10px 35px 12px;
+    }
+
+    .about-03 {
+        padding: 0 20px 14px 9px;
+    }
+
+    .about-04 {
+        padding: 0 10px 14px 12px;
+    }
+
+    .section-steps {
+        padding-top: 44px;
+        padding-bottom: 61px;
+    }
+
+    .work-image {
+        height: 100px;
+    }
+
+    .work-thumb {
+        height: 100px;
+    }
+
+    .project, 
+    .nav-social .nav-link,
+    .title-h3,
+    .steps-description,
+    .work-list,
+    .work-time,
+    .advantages-description,
+    .tarif-pack,
+    .tarif-list, 
+    form input[type="submit"] {
+        font-size: 12px;
+    }
+
+    .tarif-price {
+        font-size: 22px;
+    }
+
+    .footer-top .nav-info {
+        font-size: 14px;
+    }
+
+    .skill, 
+    .about-item,
+    .nav-tabs,
+    .tarif-text,
+    form input,
+    .footer-top .nav-link,
+    .footer-bottom {
+        font-size: 10px;
+    }
+
+    .about-title, 
+    .about-description,
+    .steps-title,
+    .work-title,
+    .advantages-text,
+    .tarif-title,
+    .tarif-description,
+    .tarif-name,
+    .form-title,
+    .form-description {
+        font-size: 16px;
+    }
+
+    .circle-portfolio {
+        width: 197px;
+        height: 197px;
+        top: -220px;
+        right: 0;
+    }
+
+    .nav-tabs {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .tech-image, .jquery .tech-image {
+        width: 35px;
+    }
 }

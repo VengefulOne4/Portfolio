@@ -28,7 +28,13 @@
                 <li class="nav-item"><a class="nav-link" href="mailto:alexdev@gmail.com">alexdev@gmail.com</a></li>
             </ul>
         </header>
-        <img class="photo" src="img/black_theme/photo.png" alt="Photo">
+        <div class="header-mobile">
+            <li class="nav-item"><a class="nav-link" href="tel:+79237777777">8 923 777-77-77</a></li>
+            <button id="opener" class="menu"><img src="/Web_Developer/Portfolio/img/black_theme/icons/menu.svg" alt="menu"></button>
+        </div>
+        <div class="photo">
+            <img src="img/black_theme/photo.png" alt="Photo">
+        </div>
         <main>
             <div class="main">
                 <svg class="circle circle-main" width="253" height="253" viewBox="0 0 253 253" xmlns="http://www.w3.org/2000/svg">
@@ -325,6 +331,7 @@
                     <div class="advantages-item">
                         <div class="advantages-image">
                             <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                <g>
                                 <path d="M27.5166 0H4.76562V40H35.2344V7.71773L27.5166 0ZM28.2031 4.00102L31.2334 7.03125H28.2031V4.00102ZM32.8906 37.6562H7.10938V2.34375H25.8594V9.375H32.8906V37.6562Z"  />
                                 <path d="M28.2008 14.1406H11.7969V16.4844H28.2008V14.1406Z"  />
                                 <path d="M28.2008 18.8281H11.7969V21.1719H28.2008V18.8281Z"  />
@@ -380,7 +387,7 @@
                     <div class="tarif-description">
                         <p>Представленные ниже цены зависят не&nbsp;только от того, какой сайт вы хотите. Конечная цена будет озвучена после прочтения Вашего ТЗ</p>
                     </div>
-                    <div class="tarif-item">
+                    <div class="tarif-item tarif-left">
                         <div class="tarif-header">
                             <p class="tarif-name">Разработка<br>лэндинга или сайт визитки</p>
                             <p class="tarif-text">Небольшой сайт состоящий из одной страницы</p>
@@ -389,7 +396,7 @@
                             <p class="project"><span>Обсудить проект</span><span class="project-img"></span></p>
                         </div>
                     </div>
-                    <div class="tarif-item">
+                    <div class="tarif-item tarif-left">
                         <div class="tarif-header">
                             <p class="tarif-pack">Что входит</p>
                             <ul class="tarif-list">
@@ -405,7 +412,7 @@
                             <p class="tarif-price">От 7 000 Р</p>
                         </div>
                     </div>
-                    <div class="tarif-item">
+                    <div class="tarif-item tarif-left">
                         <div class="tarif-header">
                             <p class="tarif-name">Разработка<br>лэндинга или сайт визитки</p>
                             <p class="tarif-text">Небольшой сайт состоящий из одной страницы</p>
@@ -414,7 +421,7 @@
                             <p class="project"><span>Обсудить проект</span><span class="project-img"></span></p>
                         </div>
                     </div>
-                    <div class="tarif-item">
+                    <div class="tarif-item tarif-left">
                         <div class="tarif-header">
                             <p class="tarif-pack">Что входит</p>
                             <ul class="tarif-list">
@@ -436,7 +443,7 @@
                             <p class="project"><span>Обсудить проект</span><span class="project-img"></span></p>
                         </div>
                     </div>
-                    <div class="tarif-item">
+                    <div class="tarif-item tarif-left">
                         <div class="tarif-header">
                             <p class="tarif-pack">Что входит</p>
                             <ul class="tarif-list">
@@ -482,7 +489,7 @@
                             <label for="communicate">Выберите удобный способ связи</label>
                             <select name="communicate" id="communicate">
                                 <option>Telegram</option>
-                                <option>WhtasApp</option>
+                                <option>WhatsApp</option>
                                 <option>Viber</option>
                                 <option>Звонок на телефон</option>
                                 <option>SMS сообщение</option>
@@ -514,6 +521,9 @@
         </div>
     </div>
 </div>
+<div id="dialog" title="Basic dialog">
+    <p>This is an animated dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the &apos;x&apos; icon.</p>
+</div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="script/jquery-ui.min.js"></script>
 <script>
@@ -521,6 +531,21 @@
         $( "#tabs" ).tabs({active: 0});
         $( document ).tooltip();
         $( "#communicate" ).selectmenu();
+        $( "#dialog" ).dialog({
+            autoOpen: false,
+            show: {
+                effect: "blind",
+                duration: 1000
+            },
+            hide: {
+                effect: "blind",
+                duration: 1000
+            }
+        });
+        
+        $( "#opener" ).on( "click", function() {
+        $( "#dialog" ).dialog( "open" );
+        });
     } );
     $(".tech-image").tooltip({
         position: {
